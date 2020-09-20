@@ -1,0 +1,62 @@
+$blue: #228be6;
+$gray: #495057;
+$pink: #f06596;
+
+@mixin button-color($color) {
+  background: $color;
+  &:hover {
+    background: ligthen($color, 10%);
+  }
+  &:active {
+    background: darken($color, 10%);
+  }
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  font-weight: bold;
+  color: white;
+
+  // &는 자기 자신(.Button)을 가리킴
+  // size props에 따라 버튼 크기 설정
+  &.large {
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+
+  &.medium {
+    height: 2.25rem;
+    font-size: 1rem;
+  }
+
+  &.small {
+    height: 1.75rem;
+    font-size: 0.825rem;
+  }
+
+  &.blue {
+    @include button-color($blue);
+  }
+
+  &.gray {
+    @include button-color($blue);
+  }
+
+  &.pink {
+    @include button-color($blue);
+  }
+
+  /* Button 클래스 우측에 Button 클래스가 있으면 여백 설정 */
+  & + & {
+    margin-left: 1rem;
+  }
+}
