@@ -62,7 +62,14 @@ function App() {
           <Button size="medium" color="gray" outline fullWidth>
             Medium
           </Button>
-          <Button size="small" color="pink" outline fullWidth>
+          <Button
+            size="small"
+            color="pink"
+            outline
+            fullWidth
+            onClick={() => console.log('클릭!')}
+            onMouseMove={() => console.log('마우스 무브!')}
+          >
             Small
           </Button>
         </div>
