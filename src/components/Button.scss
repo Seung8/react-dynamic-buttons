@@ -7,8 +7,20 @@ $pink: #f06596;
   &:hover {
     background: ligthen($color, 10%);
   }
+
   &:active {
     background: darken($color, 10%);
+  }
+
+  &.outline {
+    color: $color;
+    background: none;
+    border: 1px solid $color;
+
+    &:hover {
+      background: $color;
+      color: white;
+    }
   }
 }
 
@@ -48,15 +60,24 @@ $pink: #f06596;
   }
 
   &.gray {
-    @include button-color($blue);
+    @include button-color($gray);
   }
 
   &.pink {
-    @include button-color($blue);
+    @include button-color($pink);
   }
 
   /* Button 클래스 우측에 Button 클래스가 있으면 여백 설정 */
   & + & {
     margin-left: 1rem;
+  }
+
+  &.fullWidth {
+    width: 100%;
+    justify-content: center;
+    & + & {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
   }
 }

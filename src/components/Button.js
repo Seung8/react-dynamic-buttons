@@ -3,8 +3,8 @@ import classNames from 'classnames';
 
 // size: large, medium, small. default: medium
 // color: blue, pink, gray. default: blue
-function Button({ children, size, color }) {
-  const className = classNames('Button', size, color);
+function Button({ children, size, color, outline, fullWidth }) {
+  const className = classNames('Button', size, color, { outline, fullWidth });
   return <button className={className}>{children}</button>;
 }
 
